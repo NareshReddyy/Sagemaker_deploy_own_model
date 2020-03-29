@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Amazon AI speedy
+MAINTAINER speedy
 
 
 RUN apt-get -y update && apt-get install -y --no-install-recommends \
@@ -16,7 +16,7 @@ RUN apt-get -y update && apt-get install -y --no-install-recommends \
 # a significant amount of space. These optimizations save a fair amount of space in the
 # image, which reduces start up time.
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && \
-    pip install numpy scipy==1.1.0 scikit-learn==0.22.2 pandas numpy datetime re math os pickle warnings time boto3 logging nltk xlrd flask gevent gunicorn && \
+    pip install numpy scipy==1.1.0 scikit-learn==0.22.2 pandas numpy datetime re math os pickle warnings time pyarrow boto3 logging nltk xlrd flask gevent gunicorn && \
         rm -rf /root/.cache
 
 # Set some environment variables. PYTHONUNBUFFERED keeps Python from buffering our standard
