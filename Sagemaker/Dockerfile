@@ -20,5 +20,5 @@ ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
 
 # Set up the program in the image
-COPY Linear_Regx /opt/program
-WORKDIR /opt/program
+COPY Linear_Regx /opt/code
+WORKDIR /opt/code
